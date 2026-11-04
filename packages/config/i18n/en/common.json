@@ -1,0 +1,10 @@
+{
+  "common": {
+    "app": {
+      "name": "Waslu"
+    },
+    "actions": {
+      "continue": "Continue"
+    }
+  }
+}

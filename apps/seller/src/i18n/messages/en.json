@@ -1,0 +1,15 @@
+{
+  "common": {
+    "navigation": {
+      "home": "Home"
+    }
+  },
+  "seller": {
+    "home": {
+      "meta": "Waslu · Seller",
+      "title": "Welcome to Waslu Seller",
+      "description": "Manage catalog and orders.",
+      "cta": "Continue"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "@waslu/config/tsconfig/package",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": [
+      "vitest/globals"
+    ]
+  },
+  "include": [
+    "src",
+    "vitest.config.ts",
+    "vitest.setup.ts"
+  ]
+}
