@@ -1,0 +1,13 @@
+{
+  "name": "@waslu/config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tsconfig/base": "./tsconfig.base.json",
+    "./tsconfig/nextjs": "./tsconfig.nextjs.json",
+    "./tsconfig/package": "./tsconfig.package.json",
+    "./eslint": "./eslint.config.mjs",
+    "./i18n/en/common": "./i18n/en/common.json"
+  }
+}

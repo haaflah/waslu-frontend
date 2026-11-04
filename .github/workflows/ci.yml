@@ -1,0 +1,56 @@
+name: frontend-ci
+
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.16.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm check:strings
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build
+
+  playwright-placeholder:
+    runs-on: ubuntu-latest
+    needs: verify
+    steps:
+      - run: echo "Playwright E2E tests are not implemented yet (placeholder job)."
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    needs: verify
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.16.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @waslu/storefront build
+      - run: pnpm add -Dw @lhci/cli@0.14.x
+      - run: pnpm lhci autorun --config=.lighthouserc.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: lighthouse-report

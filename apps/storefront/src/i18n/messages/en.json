@@ -1,0 +1,15 @@
+{
+  "common": {
+    "navigation": {
+      "home": "Home"
+    }
+  },
+  "storefront": {
+    "home": {
+      "meta": "Waslu · Storefront",
+      "title": "Welcome to Waslu Storefront",
+      "description": "Browse products and start checkout.",
+      "cta": "Continue"
+    }
+  }
+}
