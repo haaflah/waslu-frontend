@@ -68,7 +68,7 @@ describe("ui components", () => {
   it("opens sheet as dialog and closes with escape", () => {
     const onOpenChange = vi.fn();
     render(
-      <Sheet description="Description" onOpenChange={onOpenChange} open title="Title">
+      <Sheet closeLabel="Close" description="Description" onOpenChange={onOpenChange} open title="Title">
         <button type="button">Focusable</button>
       </Sheet>
     );
@@ -77,10 +77,25 @@ describe("ui components", () => {
     expect(onOpenChange).toHaveBeenCalledWith(false);
   });
 
+  it("gives each sheet its own title id", () => {
+    render(
+      <>
+        <Sheet closeLabel="Close" onOpenChange={vi.fn()} open title="First">
+          <p>One</p>
+        </Sheet>
+        <Sheet closeLabel="Close" onOpenChange={vi.fn()} open title="Second">
+          <p>Two</p>
+        </Sheet>
+      </>
+    );
+    expect(screen.getByRole("dialog", { name: "First" })).toBeInTheDocument();
+    expect(screen.getByRole("dialog", { name: "Second" })).toBeInTheDocument();
+  });
+
   it("renders toast with status role and dismiss button", () => {
     const onDismiss = vi.fn();
-    render(<Toast onDismiss={onDismiss} open status="success" title="Saved" />);
-    fireEvent.click(screen.getByRole("button", { name: "Dismiss notification" }));
+    render(<Toast dismissLabel="Dismiss" onDismiss={onDismiss} open status="success" title="Saved" />);
+    fireEvent.click(screen.getByRole("button", { name: "Dismiss" }));
     expect(onDismiss).toHaveBeenCalledTimes(1);
     expect(screen.getByRole("status")).toBeInTheDocument();
   });

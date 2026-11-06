@@ -1,5 +1,7 @@
 import { type ReactNode, useId } from "react";
 
+const REQUIRED_MARK = "*";
+
 export interface FormFieldProps {
   label: string;
   hint?: string;
@@ -17,7 +19,9 @@ export function FormField({ label, hint, error, required, children }: FormFieldP
     <div className="space-y-1">
       <label htmlFor={fieldId} className="block text-sm font-medium text-neutral-900">
         {label}
-        {required ? <span className="ml-1 text-danger-700">*</span> : null}
+        {required ? <span aria-hidden="true" className="ml-1 text-danger-700">
+            {REQUIRED_MARK}
+          </span> : null}
       </label>
       {children({ fieldId, hintId, errorId })}
       {hint ? (

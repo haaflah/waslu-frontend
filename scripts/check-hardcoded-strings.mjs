@@ -3,7 +3,7 @@ import path from "node:path";
 import ts from "typescript";
 
 const ROOT = process.cwd();
-const APPS = ["apps/storefront/src", "apps/seller/src"];
+const APPS = ["apps/storefront/src", "apps/seller/src", "packages/ui/src"];
 const ATTRS = new Set(["placeholder", "aria-label", "title", "alt"]);
 const ALLOWED = [/^https?:\/\//, /^\w+(\.\w+)+$/];
 

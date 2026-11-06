@@ -10,6 +10,9 @@
       "title": "Welcome to Waslu Storefront",
       "description": "Browse products and start checkout.",
       "cta": "Continue"
+    },
+    "meta": {
+      "description": "Waslu online store"
     }
   }
 }

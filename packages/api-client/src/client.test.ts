@@ -3,13 +3,13 @@ import { normalizeApiError } from "./errors";
 
 describe("api client", () => {
   it("returns mock response in mock mode", async () => {
-    process.env.API_MODE = "mock";
+    process.env.NEXT_PUBLIC_API_MODE = "mock";
     const client = createApiClient();
     await expect(client.get<{ status: string }>("/health")).resolves.toEqual({ status: "ok" });
   });
 
   it("normalizes 401 responses", async () => {
-    process.env.API_MODE = "mock";
+    process.env.NEXT_PUBLIC_API_MODE = "mock";
     const onUnauthorized = vi.fn();
     const client = createApiClient({ getAuthHeaders: () => ({}), onUnauthorized });
 
