@@ -1,9 +1,7 @@
 import { Button, Card } from "@waslu/ui";
-import { getTranslator } from "@/i18n";
+import { t } from "@/i18n";
 
-export default async function HomePage() {
-  const t = await getTranslator("en");
-
+export default function HomePage() {
   return (
     <main className="mx-auto w-full max-w-3xl min-w-[360px] p-4 xs:p-6">
       <Card className="space-y-3">

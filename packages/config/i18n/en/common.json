@@ -4,7 +4,12 @@
       "name": "Waslu"
     },
     "actions": {
-      "continue": "Continue"
+      "continue": "Continue",
+      "close": "Close",
+      "dismiss": "Dismiss"
+    },
+    "status": {
+      "loading": "Loading"
     }
   }
 }

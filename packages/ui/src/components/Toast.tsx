@@ -1,11 +1,15 @@
 import { type ReactNode } from "react";
 import { Button } from "./Button";
 
+const CLOSE_ICON = "\u00d7";
+
 export interface ToastProps {
   open: boolean;
   title: string;
   description?: ReactNode;
   status?: "info" | "success" | "warning" | "error";
+  /** Accessible name for the dismiss button, for example t("common.actions.dismiss"). */
+  dismissLabel: string;
   onDismiss: () => void;
 }
 
@@ -16,7 +20,7 @@ const statusStyles: Record<NonNullable<ToastProps["status"]>, string> = {
   error: "border-danger-100 bg-danger-100 text-danger-700"
 };
 
-export function Toast({ open, title, description, status = "info", onDismiss }: ToastProps) {
+export function Toast({ open, title, description, status = "info", dismissLabel, onDismiss }: ToastProps) {
   if (!open) return null;
 
   return (
@@ -30,8 +34,8 @@ export function Toast({ open, title, description, status = "info", onDismiss }: 
           <p className="font-medium">{title}</p>
           {description ? <p className="mt-1 text-sm">{description}</p> : null}
         </div>
-        <Button aria-label="Dismiss notification" size="sm" variant="ghost" onClick={onDismiss}>
-          ×
+        <Button aria-label={dismissLabel} size="sm" variant="ghost" onClick={onDismiss}>
+          {CLOSE_ICON}
         </Button>
       </div>
     </div>

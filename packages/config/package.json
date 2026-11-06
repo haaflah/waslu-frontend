@@ -8,6 +8,7 @@
     "./tsconfig/nextjs": "./tsconfig.nextjs.json",
     "./tsconfig/package": "./tsconfig.package.json",
     "./eslint": "./eslint.config.mjs",
-    "./i18n/en/common": "./i18n/en/common.json"
+    "./i18n/en/common": "./i18n/en/common.json",
+    "./i18n/create-translator": "./i18n/create-translator.ts"
   }
 }

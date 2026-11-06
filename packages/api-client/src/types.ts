@@ -3,7 +3,6 @@ export type ApiMode = "mock" | "live";
 export interface ApiClientConfig {
   mode: ApiMode;
   liveBaseUrl: string;
-  mockBaseUrl: string;
 }
 
 export type RequestMethod = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
