@@ -9,6 +9,7 @@ export default function HomePage() {
         <h1 className="text-2xl font-semibold text-neutral-900">{t("seller.home.title")}</h1>
         <p className="text-neutral-700">{t("seller.home.description")}</p>
         <Button>{t("seller.home.cta")}</Button>
+        <p>Issue 1 doneee</p>
       </Card>
     </main>
   );

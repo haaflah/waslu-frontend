@@ -32,7 +32,7 @@ Waslu is an open-source tool that lets small sellers open an online store in min
 | Seller sign-up and login screens                          | Not started                                                                 |
 | Storefront pages (listing, product, cart, checkout)       | Not started                                                                 |
 
-Both apps currently show a simple welcome page so you can check that everything runs.
+Both apps currently show a simple welcome page so you can check that everything runs. Done via issue 2
 
 ## Tech stack
 
