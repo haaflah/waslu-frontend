@@ -2,6 +2,7 @@
 //
 //   const t = createTranslator(commonMessages, appMessages);
 //   t("seller.home.title"); // "Welcome to Waslu Seller"
+// Issue 1 done - Scaffold verification and environment alignment#2 
 
 export type Messages = { [key: string]: string | Messages };
 
